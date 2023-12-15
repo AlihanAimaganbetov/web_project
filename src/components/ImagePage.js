@@ -1,16 +1,13 @@
-// ImagePage.js
 import React from 'react';
-import { useLocation } from 'react-router-dom';
-
+import { useParams } from 'react-router-dom';
+import './ImagePage.css'; // Импорт вашего CSS файла
 const ImagePage = () => {
-  const location = useLocation();
-  const imageUrl = new URLSearchParams(location.search).get('imageUrl');
-  const description = new URLSearchParams(location.search).get('description');
+  const { imageUrl } = useParams();
 
   return (
     <div className="image-page">
-      <img src={imageUrl} alt="gallery" />
-      <p>{description}</p>
+      <img src={decodeURIComponent(imageUrl)} alt="gallery" />
+      H!
     </div>
   );
 };
