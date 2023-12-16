@@ -6,8 +6,7 @@ const ImagePage = () => {
 
   return (
     <div className="image-page">
-      <img src={decodeURIComponent(imageUrl)} alt="gallery" />
-      H!
+      <img src={decodeURIComponent(imageUrl)} alt="gallery" />  
     </div>
   );
 };
