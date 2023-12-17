@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import './FavoritesPage.css'; // Импорт вашего CSS файла
-
+import { Link } from 'react-router-dom';
 const ImagePage = () => {
   const [storedFavoriteImages, setStoredFavoriteImages] = useState([]);
 
@@ -20,13 +20,18 @@ const ImagePage = () => {
   };
 
   return (
-    <div className="image-page">
-      {storedFavoriteImages.map((image, index) => (
-        <div key={index} className="image-container">
-          <img src={image} alt={` ${index}`} />
-          <button onClick={() => handleImageDelete(image)}>Удалить</button>
-        </div>
-      ))}
+    <div>
+      <Link to='/'>
+        <button>Back</button>
+      </Link>
+      <div className="image-page">
+        {storedFavoriteImages.map((image, index) => (
+          <div key={index} className="image-container">
+            <img src={image} alt={` ${index}`} />
+            <button onClick={() => handleImageDelete(image)}>Удалить</button>
+          </div>
+        ))}
+      </div>
     </div>
   );
 };
