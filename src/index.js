@@ -7,9 +7,10 @@ import ImagePage from './components/ImagePage';
 import FavoritesPage from './components/FavoritesPage';
 
 const App = () => {
-    const imagesPerPage = 25;
+    const imagesPerPage = 23;
 
     return (
+        <div>
         <Router>
             <Routes>
                 <Route exact path="/" element={<Gallery imagesPerPage={imagesPerPage} />} />
@@ -17,10 +18,9 @@ const App = () => {
                 <Route path="/favorites" element={<FavoritesPage />} />
             </Routes>
         </Router>
+        </div>
     );
 };
-
-
 const app = ReactDOMClient.createRoot(document.getElementById("root"))
 
 app.render(App())
