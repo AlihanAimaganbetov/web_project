@@ -93,6 +93,13 @@ button {
   margin-top: 10px;
   border-radius: 5px;
   cursor: pointer;
+  position: absolute;
+  top: 10px; /* Задаем отступ сверху */
+  right: 10px; /* Задаем отступ справа */
+
+  padding: 10px 20px; /* Внутренний отступ для формы */
+
+
 }
 
 button:hover {
@@ -136,12 +143,3 @@ footer {
   text-align: center;
   padding: 10px 0;
 } 
-.no-button{
-  position: absolute;
-  top: 10px; /* Задаем отступ сверху */
-  right: 10px; /* Задаем отступ справа */
-
-  padding: 10px 20px; /* Внутренний отступ для формы */
-
-
-}

@@ -303,11 +303,9 @@ const Gallery = ({ imagesPerPage }) => {
     }
   };
   const handleImageDelete = (imageUrl) => {
-    // Фильтрация изображений для удаления из состояния компонента
     const updatedImages = images.filter((image) => image !== imageUrl);
     setImages(updatedImages);
 
-    // Обновление localStorage с новым списком изображений
     localStorage.setItem('savedImages', JSON.stringify(updatedImages));
   };
 
@@ -338,11 +336,23 @@ const Gallery = ({ imagesPerPage }) => {
 
   return (
     <div>
-      <button onClick={() => setImages(shuffleArray(images))}>Перемешать галерею</button>
-      <Link to={'/favorites'}>
-        <button>favorites</button>
-      </Link>
-      <input type="file" accept="image/*" onChange={handleImageUpload} />
+      <header>
+        <h1>Gallery</h1>
+        <nav>
+          <ul>
+            <li><a href="/">Home</a></li>
+            <li><a href="/aboutUs.html">About Us</a></li>
+            <li><Link to={'/favorites'}>Favorites</Link> </li>
+          </ul>
+        </nav>
+      </header>
+      <div className='no-button'>
+        <button onClick={() => setImages(shuffleArray(images))}>Перемешать галерею</button>
+        <Link to={'/favorites'}>
+          <button>favorites</button>
+        </Link>
+        <input type="file" accept="image/*" onChange={handleImageUpload} />
+      </div>
       <div className="gallery">
         {currentImages.map((image, index) => (
           <div>
@@ -371,6 +381,10 @@ const Gallery = ({ imagesPerPage }) => {
           </button>
         ))}
       </div>
+      <br></br>
+      <footer>
+        <p>&copy; 2023 Musical Instruments Store</p>
+      </footer>
     </div>
   );
 };
