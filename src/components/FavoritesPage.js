@@ -1,18 +1,17 @@
 import React, { useState, useEffect } from 'react';
-import './FavoritesPage.css'; // Импорт вашего CSS файла
+import './FavoritesPage.css';
 import { Link } from 'react-router-dom';
 const ImagePage = () => {
   const [storedFavoriteImages, setStoredFavoriteImages] = useState([]);
 
-  // Получение избранных изображений из localStorage
   useEffect(() => {
     if (localStorage.getItem('favoriteImages')) {
       const parsedImages = JSON.parse(localStorage.getItem('favoriteImages'));
       setStoredFavoriteImages(parsedImages);
     }
-  }, []); // Пустой массив зависимостей, чтобы useEffect запустился только один раз при монтировании компонента
+  }, []); 
 
-  // Удаление изображения из избранных
+ 
   const handleImageDelete = (imageUrl) => {
     const updatedImages = storedFavoriteImages.filter((image) => image !== imageUrl);
     setStoredFavoriteImages(updatedImages);
@@ -21,8 +20,17 @@ const ImagePage = () => {
 
   return (
     <div>
+      <header>
+        <h1>Musical Instruments Store</h1>
+        <nav>
+            <ul>
+                <li><a href="/">Home</a></li>
+                <li><a href="aboutUs.html">About Us</a></li>
+            </ul>
+        </nav>
+    </header>
       <Link to='/'>
-        <button>Back</button>
+      <a href="/"><button class="user-profile">Back</button></a>
       </Link>
       <div className="image-page">
         {storedFavoriteImages.map((image, index) => (
@@ -32,6 +40,9 @@ const ImagePage = () => {
           </div>
         ))}
       </div>
+      <footer>
+        <p>&copy; 2023 Gallery</p>
+    </footer>
     </div>
   );
 };

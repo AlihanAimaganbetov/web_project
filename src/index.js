@@ -7,17 +7,17 @@ import ImagePage from './components/ImagePage';
 import FavoritesPage from './components/FavoritesPage';
 
 const App = () => {
-    const imagesPerPage = 23;
+    const imagesPerPage = 25;
 
     return (
         <div>
-        <Router>
-            <Routes>
-                <Route exact path="/" element={<Gallery imagesPerPage={imagesPerPage} />} />
-                <Route path="/image-page/:imageUrl" element={<ImagePage />} />
-                <Route path="/favorites" element={<FavoritesPage />} />
-            </Routes>
-        </Router>
+            <Router>
+                <Routes>
+                    <Route exact path="/" element={<Gallery imagesPerPage={imagesPerPage} />} />
+                    <Route path="/image-page/:imageUrl" element={<ImagePage />} />
+                    <Route path="/favorites" element={<FavoritesPage />} />
+                </Routes>
+            </Router>
         </div>
     );
 };
