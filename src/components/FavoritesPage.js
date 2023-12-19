@@ -26,6 +26,7 @@ const ImagePage = () => {
             <ul>
                 <li><a href="/">Home</a></li>
                 <li><a href="aboutUs.html">About Us</a></li>
+                <li><Link to={'/favorites'}>Favorites</Link> </li>
             </ul>
         </nav>
     </header>
