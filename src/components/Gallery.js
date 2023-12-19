@@ -383,7 +383,7 @@ const Gallery = ({ imagesPerPage }) => {
       </div>
       <br></br>
       <footer>
-        <p>&copy; 2023 Musical Instruments Store</p>
+        <p>&copy; 2023 Gallery</p>
       </footer>
     </div>
   );

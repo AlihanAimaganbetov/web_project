@@ -75,3 +75,21 @@ p {
   left: 10px; /* Задаем отступ справа */
   padding: 10px 20px; /* Внутренний отступ для формы */
 }
+.image-info-container {
+  display: flex;
+  justify-content: center; /* Выравнивание по горизонтали */
+  align-items: center; /* Выравнивание по вертикали */
+}
+.image-page {
+  border-radius: 8px;
+  flex: 1;
+  margin-right: 20px; 
+  padding: 10px;
+}
+.image-page img{
+  border-radius: 8px;
+
+}
+.info {
+  flex: 1;
+}
