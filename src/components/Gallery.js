@@ -343,6 +343,7 @@ const Gallery = ({ imagesPerPage }) => {
             <li><a href="/">Home</a></li>
             <li><a href="/aboutUs.html">About Us</a></li>
             <li><Link to={'/favorites'}>Favorites</Link> </li>
+            <li><Link to={'/pexels'}>API</Link> </li>
           </ul>
         </nav>
       </header>
@@ -351,7 +352,11 @@ const Gallery = ({ imagesPerPage }) => {
         <Link to={'/favorites'}>
           <button>favorites</button>
         </Link>
-        <input type="file" accept="image/*" onChange={handleImageUpload} />
+        <label className="custom-file-upload">
+          <input type="file" accept="image/*" onChange={handleImageUpload} />
+          Upload Image
+        </label>
+
       </div>
       <div className="gallery">
         {currentImages.map((image, index) => (

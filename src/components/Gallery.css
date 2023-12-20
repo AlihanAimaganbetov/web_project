@@ -148,3 +148,17 @@ footer {
 
 
 }
+.custom-file-upload {
+  border: 2px solid #ccc;
+  display: inline-block;
+  padding: 6px 12px;
+  cursor: pointer;
+  border-radius: 4px;
+  background-color: #f0f0f0;
+  color: #333;
+  font-size: 16px;
+}
+
+.custom-file-upload input[type="file"] {
+  display: none;
+}
