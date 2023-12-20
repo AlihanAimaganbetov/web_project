@@ -9,9 +9,9 @@ const ImagePage = () => {
       const parsedImages = JSON.parse(localStorage.getItem('favoriteImages'));
       setStoredFavoriteImages(parsedImages);
     }
-  }, []); 
+  }, []);
 
- 
+
   const handleImageDelete = (imageUrl) => {
     const updatedImages = storedFavoriteImages.filter((image) => image !== imageUrl);
     setStoredFavoriteImages(updatedImages);
@@ -19,19 +19,20 @@ const ImagePage = () => {
   };
 
   return (
-    <div>
+    <div className='content'>
       <header>
-        <h1>Musical Instruments Store</h1>
+        <h1>Gallery</h1>
         <nav>
-            <ul>
-                <li><a href="/">Home</a></li>
-                <li><a href="aboutUs.html">About Us</a></li>
-                <li><Link to={'/favorites'}>Favorites</Link> </li>
-            </ul>
+          <ul>
+            <li><a href="/">Home</a></li>
+            <li><a href="aboutUs.html">About Us</a></li>
+            <li><Link to={'/favorites'}>Favorites</Link> </li>
+            <li><Link to={'/pexels'}>API</Link> </li>
+          </ul>
         </nav>
-    </header>
+      </header>
       <Link to='/'>
-      <a href="/"><button class="user-profile">Back</button></a>
+        <a href="/"><button class="user-profile">Back</button></a>
       </Link>
       <div className="image-page">
         {storedFavoriteImages.map((image, index) => (
@@ -41,9 +42,7 @@ const ImagePage = () => {
           </div>
         ))}
       </div>
-      <footer>
-        <p>&copy; 2023 Gallery</p>
-    </footer>
+
     </div>
   );
 };

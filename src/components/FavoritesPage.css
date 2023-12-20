@@ -29,6 +29,7 @@ body {
   font-family: 'IBM Plex Sans', sans-serif;
   font-family: 'Nunito', sans-serif;
   font-family: 'Signika Negative', sans-serif;
+  min-height: 100vh;
 }
 header {
   background-color: #333;
@@ -62,6 +63,7 @@ footer {
   color: #fff;
   text-align: center;
   padding: 10px 0;
+  bottom: 100px;
 }
 h1 {
 
@@ -97,4 +99,8 @@ p {
   top: 10px; /* Задаем отступ сверху */
   left: 10px; /* Задаем отступ справа */
   padding: 10px 20px; /* Внутренний отступ для формы */
+}
+.content {
+  flex: 1; /* Занимает все доступное пространство между контентом и футером */
+  /* Дополнительные стили для вашего контента */
 }

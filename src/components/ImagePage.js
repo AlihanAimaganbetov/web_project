@@ -37,12 +37,13 @@ const ImagePage = () => {
   return (
     <div>
       <header>
-        <h1>Musical Instruments Store</h1>
+        <h1>Gallery</h1>
         <nav>
           <ul>
             <li><a href="/">Home</a></li>
             <li><a href="aboutUs.html">About Us</a></li>
             <li><Link to={'/favorites'}>Favorites</Link> </li>
+            <li><Link to={'/pexels'}>API</Link> </li>
           </ul>
         </nav>
       </header>
@@ -64,9 +65,7 @@ const ImagePage = () => {
        
         )}
       </div>
-      <footer>
-        <p>&copy; 2023 Musical Instruments Store</p>
-      </footer>
+
     </div>
   );
 };
