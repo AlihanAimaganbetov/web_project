@@ -1,11 +1,11 @@
 import React from 'react';
 import ReactDOMClient from 'react-dom/client';
 import './index.css';
-import Gallery from './components/Gallery';
+import Gallery from './components/Gallery/Gallery';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
-import ImagePage from './components/ImagePage';
-import FavoritesPage from './components/FavoritesPage';
-import Pixels from './components/pixels';
+import ImagePage from './components/ImagePage/ImagePage';
+import FavoritesPage from './components/FavoritesPage/FavoritesPage';
+import Pixels from './components/Pixels/pixels';
 const App = () => {
     const imagesPerPage = 25;
     return (

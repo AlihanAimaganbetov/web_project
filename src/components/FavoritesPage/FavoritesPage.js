@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import './FavoritesPage.css';
-import { Link } from 'react-router-dom';
+import {Link} from 'react-router-dom';
 const ImagePage = () => {
   const [storedFavoriteImages, setStoredFavoriteImages] = useState([]);
 
