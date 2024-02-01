@@ -1,91 +1,42 @@
 
-
-  header {
-    background-color: #333;
-    color: #fff;
-    text-align: center;
-    padding: 20px 0;
-  }
-  
-  header h1 {
-    margin: 0;
-  }
-  
-  nav ul {
-    list-style: none;
-    padding: 0;
-  }
-  
-  nav ul li {
-    display: inline;
-    margin-right: 20px;
-  }
-  
-  nav ul li a {
-    text-decoration: none;
-    color: #fff;
-    font-weight: bold;
-  }
-  
-  footer {
-    background-color: #333;
-    color: #fff;
-    text-align: center;
-    padding: 10px 0;
-  }
-  h1 {
-  
-    text-align: center;
-  }
-  
-  p {
-    font-size: 18px;
-  }
-  
-  .container {
+.container {
     max-width: 960px;
     margin: 20px auto;
     background-color: #fff;
     padding: 20px;
     border-radius: 5px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  }
-  .my-button {
-    width: 100px;
-    height: 40px;
-    background-color: #f36f6f;
-    color: #fff;
-    border: none;
-    transition: all 0.3s ease; /* Add a smooth transition */
-    border-radius: 5px;
-  }
-  .my-button:hover {
-    background-color: #e55757;
-  }
-  .user-profile{
+}
+
+.user-profile {
     position: absolute;
     top: 10px; /* Задаем отступ сверху */
     left: 10px; /* Задаем отступ справа */
     padding: 10px 20px; /* Внутренний отступ для формы */
-  }
-  .image-info-container {
+}
+
+.image-info-container {
     display: flex;
     justify-content: center; /* Выравнивание по горизонтали */
     align-items: center; /* Выравнивание по вертикали */
-  }
-  .image-page {
+}
+
+.image-page {
     border-radius: 8px;
     flex: 1;
-    margin-right: 20px; 
+    margin-right: 20px;
     padding: 10px;
-  }
-  .image-page img{
+}
+
+.image-page img {
     border-radius: 8px;
-  
-  }
-  .info {
+
+}
+
+.info {
     flex: 1;
-  }
-  .text{
+}
+
+.text {
     align-items: center;
-  }
+}

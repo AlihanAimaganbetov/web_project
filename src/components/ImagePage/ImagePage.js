@@ -50,7 +50,7 @@ const ImagePage = () => {
       <Link to='/'>
         <a href="/"><button class="user-profile">Back</button></a>
       </Link>
-      <div className='no-button'>
+      <div className='gallery-button'>
         <button onClick={() => addToFavorites(imageUrl)}>add to favorites</button>
       </div>
       <div className="image-info-container">
