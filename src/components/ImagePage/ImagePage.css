@@ -1,13 +1,4 @@
 
-.container {
-    max-width: 960px;
-    margin: 20px auto;
-    background-color: #fff;
-    padding: 20px;
-    border-radius: 5px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-}
-
 .user-profile {
     position: absolute;
     top: 10px; /* Задаем отступ сверху */
@@ -15,23 +6,22 @@
     padding: 10px 20px; /* Внутренний отступ для формы */
 }
 
-.image-info-container {
-    display: flex;
-    justify-content: center; /* Выравнивание по горизонтали */
-    align-items: center; /* Выравнивание по вертикали */
-}
-
 .image-page {
     border-radius: 8px;
     flex: 1;
     margin-right: 20px;
     padding: 10px;
+    max-width: 500px; /* Например, установите максимальную ширину */
+    max-height: 500px;
 }
 
 .image-page img {
-    border-radius: 8px;
-
+    max-width: 100%; /* Ограничиваем ширину изображения до 100% ширины родительского элемента */
+    max-height: 100%; /* Ограничиваем высоту изображения до 100% высоты родительского элемента */
+    height: auto; /* Позволяет изображению сохранять пропорции */
+    border-radius: 8px; /* Применяем скругление к изображению */
 }
+
 
 .info {
     flex: 1;

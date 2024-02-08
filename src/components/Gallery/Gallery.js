@@ -282,11 +282,11 @@ const Gallery = ({imagesPerPage}) => {
     );
 
 
-    const addToFavorites = (imageUrl) => {
-        alert("Сохранено")
-        setFavorites((prevFavorites) => [...prevFavorites, imageUrl]);
-        localStorage.setItem('favoriteImages', JSON.stringify([...favorites, imageUrl]));
-    };
+    // const addToFavorites = (imageUrl) => {
+    //     alert("Сохранено")
+    //     setFavorites((prevFavorites) => [...prevFavorites, imageUrl]);
+    //     localStorage.setItem('favoriteImages', JSON.stringify([...favorites, imageUrl]));
+    // };
 
     const handleImageUpload = (event) => {
         const file = event.target.files[0];
@@ -302,12 +302,12 @@ const Gallery = ({imagesPerPage}) => {
             reader.readAsDataURL(file);
         }
     };
-    const handleImageDelete = (imageUrl) => {
-        const updatedImages = images.filter((image) => image !== imageUrl);
-        setImages(updatedImages);
-
-        localStorage.setItem('savedImages', JSON.stringify(updatedImages));
-    };
+    // const handleImageDelete = (imageUrl) => {
+    //     const updatedImages = images.filter((image) => image !== imageUrl);
+    //     setImages(updatedImages);
+    //
+    //     localStorage.setItem('savedImages', JSON.stringify(updatedImages));
+    // };
 
 
     useEffect(() => {
@@ -355,7 +355,6 @@ const Gallery = ({imagesPerPage}) => {
                     <input type="file" accept="image/*" onChange={handleImageUpload}/>
                     Upload Image
                 </label>
-
             </div>
             <div className="gallery">
                 {currentImages.map((image, index) => (
@@ -364,14 +363,11 @@ const Gallery = ({imagesPerPage}) => {
                             <div className="gallery-image">
                                 <Image imageUrl={image}/>
                             </div>
-                            <br></br>
                         </Link>
-                        <button onClick={() => handleImageDelete(image)}>Delete</button>
-                        <button onClick={() => addToFavorites(image)}>Add to Favorites</button>
-                        sadjkfahsdkfjhaskjfhjshkj
+                        {/*<button onClick={() => handleImageDelete(image)}>Delete</button>*/}
+                        {/*<button onClick={() => addToFavorites(image)}>Add to Favorites</button>*/}
                     </div>
                 ))}
-
             </div>
             <div className="pagination">
                 <button onClick={prevPage} disabled={currentPage === 1}>
