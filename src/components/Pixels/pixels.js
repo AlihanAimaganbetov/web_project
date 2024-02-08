@@ -40,7 +40,7 @@ const Pixels = () => {
           <button onClick={handleSearch}>Search</button>
         </div>
         {photoInfo && (
-          <div>
+          <div className="pixels-img">
             <h1>{photoInfo.alt}</h1>
             <img src={photoInfo.src.original} alt={photoInfo.alt} style={{ maxWidth: '100%', maxHeight: '100%', display: 'block' }}
             />

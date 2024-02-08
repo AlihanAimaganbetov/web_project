@@ -7,7 +7,7 @@ import ImagePage from './components/ImagePage/ImagePage';
 import FavoritesPage from './components/FavoritesPage/FavoritesPage';
 import Pixels from './components/Pixels/pixels';
 const App = () => {
-    const imagesPerPage = 25;
+    const imagesPerPage = 24;
     return (
         <div>
             <Router>

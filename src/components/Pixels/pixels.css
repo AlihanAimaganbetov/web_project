@@ -1,33 +1,71 @@
 
-.user-profile {
-    position: absolute;
-    top: 10px; /* Задаем отступ сверху */
-    left: 10px; /* Задаем отступ справа */
-    padding: 10px 20px; /* Внутренний отступ для формы */
+.pixels-img {
+    margin-top: 20px;
+    background-color: #fff;
+    padding: 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
-.image-info-container {
-    display: flex;
-    justify-content: center; /* Выравнивание по горизонтали */
-    align-items: center; /* Выравнивание по вертикали */
+.pixels-img h1 {
+    font-size: 24px;
 }
 
-.image-page {
-    border-radius: 8px;
-    flex: 1;
-    margin-right: 20px;
-    padding: 10px;
+.pixels-img img {
+    max-width: 100%;
+    max-height: 400px;
+    display: block;
+    margin-top: 10px;
+    border-radius: 5px;
 }
 
-.image-page img {
-    border-radius: 8px;
-
+.pixels-img p {
+    font-size: 16px;
+    margin: 10px 0;
 }
 
-.info {
-    flex: 1;
+.pixels-img p a {
+    color: #f36f6f;
+    text-decoration: none;
+}
+
+.pixels-img p a:hover {
+    text-decoration: underline;
+    color:#e55757;
+}
+.text {
+    margin-top: 20px;
 }
 
 .text {
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
     align-items: center;
+    flex-direction: column;
+    text-align: center; /* Добавляем центрирование текста */
+}
+
+.text label {
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+.text input[type="text"] {
+    padding: 8px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+}
+
+.text button {
+    padding: 8px 16px;
+    font-size: 16px;
+    background-color: #f36f6f;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    white-space: nowrap; /* Предотвращаем перенос текста на новую строку */
+}
+
+.text button:hover {
+    background-color: #e55757;
 }
