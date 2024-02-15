@@ -34,9 +34,9 @@ const ImagePage = () => {
       <Link to='/'>
         <a href="/"><button class="user-profile">Back</button></a>
       </Link>
-      <div className="image-page">
+      <div className="favorites-gallery">
         {storedFavoriteImages.map((image, index) => (
-          <div key={index} className="image-container">
+          <div key={index} className="favorites">
             <img src={image} alt={` ${index}`} />
             <button onClick={() => handleImageDelete(image)}>Удалить</button>
           </div>

@@ -282,11 +282,11 @@ const Gallery = ({imagesPerPage}) => {
     );
 
 
-    // const addToFavorites = (imageUrl) => {
-    //     alert("Сохранено")
-    //     setFavorites((prevFavorites) => [...prevFavorites, imageUrl]);
-    //     localStorage.setItem('favoriteImages', JSON.stringify([...favorites, imageUrl]));
-    // };
+    const addToFavorites = (imageUrl) => {
+        alert("Сохранено")
+        setFavorites((prevFavorites) => [...prevFavorites, imageUrl]);
+        localStorage.setItem('favoriteImages', JSON.stringify([...favorites, imageUrl]));
+    };
 
     const handleImageUpload = (event) => {
         const file = event.target.files[0];
@@ -302,12 +302,12 @@ const Gallery = ({imagesPerPage}) => {
             reader.readAsDataURL(file);
         }
     };
-    // const handleImageDelete = (imageUrl) => {
-    //     const updatedImages = images.filter((image) => image !== imageUrl);
-    //     setImages(updatedImages);
-    //
-    //     localStorage.setItem('savedImages', JSON.stringify(updatedImages));
-    // };
+    const handleImageDelete = (imageUrl) => {
+        const updatedImages = images.filter((image) => image !== imageUrl);
+        setImages(updatedImages);
+
+        localStorage.setItem('savedImages', JSON.stringify(updatedImages));
+    };
 
 
     useEffect(() => {
@@ -342,6 +342,7 @@ const Gallery = ({imagesPerPage}) => {
                         <li><a href="/">Home</a></li>
                         <li><a href="/aboutUs.html">About Us</a></li>
                         <li><Link to={'/favorites'}>Favorites</Link></li>
+
                         <li><Link to={'/pexels'}>API</Link></li>
                     </ul>
                 </nav>
@@ -364,8 +365,12 @@ const Gallery = ({imagesPerPage}) => {
                                 <Image imageUrl={image}/>
                             </div>
                         </Link>
-                        {/*<button onClick={() => handleImageDelete(image)}>Delete</button>*/}
-                        {/*<button onClick={() => addToFavorites(image)}>Add to Favorites</button>*/}
+                        <div className="button-image">
+                            <button onClick={() => handleImageDelete(image)}><img src={"../Icons/icons8-удалить-32.png"}
+                                                                                  alt={'aaa'}></img></button>
+                            <button onClick={() => addToFavorites(image)}><img src={"../Icons/icons8-плюс-32.png"}
+                                                                               alt={'mage'}></img></button>
+                        </div>
                     </div>
                 ))}
             </div>

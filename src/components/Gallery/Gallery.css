@@ -79,3 +79,6 @@
 .custom-file-upload input[type="file"] {
     display: none;
 }
+.button-image button{
+    padding: 10px 20px;
+}
