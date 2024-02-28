@@ -18,6 +18,7 @@ const Pixels = () => {
     }
   };
 
+
   return (
     <div>
       <header>

@@ -1,0 +1,84 @@
+.gallery {
+    padding-top: 10px;
+    display: grid;
+    grid-template-columns: repeat(4, minmax(250px, 1fr)); /* По два изображения в одной строке */
+    gap: 20px;
+}
+
+
+.gallery-image {
+    width: 270px; /* увеличиваем ширину */
+    height: 270px; /* увеличиваем высоту */
+    overflow: hidden;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+    position: relative;
+}
+
+
+.gallery-image:hover {
+    transform: scale(1.05);
+}
+
+.gallery-image img {
+    width: auto; /* Автоматический размер ширины */
+    height: auto; /* Автоматический размер высоты */
+    max-width: 100%; /* Максимальная ширина 100% */
+    max-height: 100%; /* Максимальная высота 100% */
+    object-fit: contain; /* Подгоняем изображение в контейнер */
+    border-radius: 8px;
+    display: block; /* Делаем изображение блочным элементом */
+    margin: auto; /* Центрируем изображение по горизонтали */
+}
+
+
+.pagination {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.pagination button {
+    background-color: #f36f6f;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    margin-top: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.pagination button:hover {
+    background-color: #e55757;
+}
+
+.pagination button[disabled] {
+    cursor: not-allowed;
+    opacity: 0.6;
+}
+
+.gallery-button {
+    position: absolute;
+    top: 10px; /* Задаем отступ сверху */
+    right: 10px; /* Задаем отступ справа */
+    padding: 10px 20px; /* Внутренний отступ для формы */
+}
+
+.custom-file-upload {
+    border: 2px solid #ccc;
+    display: inline-block;
+    padding: 6px 12px;
+    cursor: pointer;
+    border-radius: 4px;
+    background-color: #f0f0f0;
+    color: #333;
+    font-size: 16px;
+}
+
+.custom-file-upload input[type="file"] {
+    display: none;
+}
+.button-image button{
+    padding: 10px 20px;
+}

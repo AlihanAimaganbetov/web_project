@@ -305,7 +305,6 @@ const Gallery = ({imagesPerPage}) => {
     const handleImageDelete = (imageUrl) => {
         const updatedImages = images.filter((image) => image !== imageUrl);
         setImages(updatedImages);
-
         localStorage.setItem('savedImages', JSON.stringify(updatedImages));
     };
 
@@ -342,10 +341,11 @@ const Gallery = ({imagesPerPage}) => {
                         <li><a href="/">Home</a></li>
                         <li><a href="/aboutUs.html">About Us</a></li>
                         <li><Link to={'/favorites'}>Favorites</Link></li>
-
+                        <li><Link to={'/Api_Photo'}>ApiPhoto</Link></li>
                         <li><Link to={'/pexels'}>API</Link></li>
                     </ul>
                 </nav>
+
             </header>
             <div className='gallery-button'>
                 <button onClick={() => setImages(shuffleArray(images))}>Перемешать галерею</button>
