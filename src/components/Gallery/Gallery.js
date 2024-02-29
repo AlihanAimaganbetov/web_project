@@ -345,7 +345,6 @@ const Gallery = ({imagesPerPage}) => {
                         <li><Link to={'/pexels'}>API</Link></li>
                     </ul>
                 </nav>
-
             </header>
             <div className='gallery-button'>
                 <button onClick={() => setImages(shuffleArray(images))}>Перемешать галерею</button>
