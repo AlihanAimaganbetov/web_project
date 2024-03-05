@@ -585,6 +585,7 @@ const Gallery = ({imagesPerPage}) => {
     }, []); // Пустой массив зависимостей, чтобы эффект запустился только один раз при монтировании
 
 
+
     const shuffleArray = (array) => {
         const newArray = [...array]; // Создаем копию массива
         for (let i = newArray.length - 1; i > 0; i--) {
