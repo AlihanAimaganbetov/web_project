@@ -622,13 +622,46 @@ const Gallery = ({imagesPerPage}) => {
     const handleImageDelete = (imageUrl) => {
         const updatedImages = images.filter((image) => image !== imageUrl);
         setImages(updatedImages);
-        localStorage.setItem('savedImages', JSON.stringify(updatedImages));
+        updateIndexedDB(updatedImages);
     };
 
+    const updateIndexedDB = (updatedImages) => {
+        const request = indexedDB.open('imagesDB', 1);
+
+        request.onerror = function(event) {
+            console.error("IndexedDB error:", event.target.error);
+        };
+
+        request.onsuccess = function(event) {
+            const db = event.target.result;
+            const transaction = db.transaction(['imagesStore'], 'readwrite');
+            const objectStore = transaction.objectStore('imagesStore');
+
+            // Очистить хранилище
+            const clearRequest = objectStore.clear();
+
+            clearRequest.onsuccess = function() {
+                // Добавить обновленные изображения в хранилище
+                updatedImages.forEach(url => {
+                    objectStore.add({ url });
+                });
+                console.log("IndexedDB has been updated.");
+            };
+
+            clearRequest.onerror = function() {
+                console.error("Error updating IndexedDB:", clearRequest.error);
+            };
+
+            transaction.oncomplete = function() {
+                db.close();
+            };
+        };
+    };
 
     useEffect(() => {
-        localStorage.setItem('savedImages', JSON.stringify(images));
+        updateIndexedDB(images);
     }, [images]);
+
 
     const [currentPage, setCurrentPage] = useState(1);
     const indexOfLastImage = currentPage * imagesPerPage;
