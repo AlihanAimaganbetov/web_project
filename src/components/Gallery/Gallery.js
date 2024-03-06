@@ -594,16 +594,82 @@ const Gallery = ({imagesPerPage}) => {
         }
         return newArray;
     };
-    const [favorites, setFavorites] = useState(
-        JSON.parse(localStorage.getItem('favoriteImages')) || []
-    );
 
+
+    const [favorites, setFavorites] = useState([]);
+
+    useEffect(() => {
+        const request = indexedDB.open('favoritesDB', 1);
+
+        request.onerror = function(event) {
+            console.error("IndexedDB error:", event.target.error);
+        };
+
+        request.onupgradeneeded = function(event) {
+            const db = event.target.result;
+            // Создать хранилище "favoritesStore", если оно еще не существует
+            if (!db.objectStoreNames.contains('favoritesStore')) {
+                db.createObjectStore('favoritesStore', { keyPath: 'id', autoIncrement: true });
+            }
+        };
+
+        request.onsuccess = function(event) {
+            const db = event.target.result;
+            const transaction = db.transaction(['favoritesStore'], 'readonly');
+            const objectStore = transaction.objectStore('favoritesStore');
+
+            const getAllFavorites = objectStore.getAll();
+
+            getAllFavorites.onsuccess = function() {
+                setFavorites(getAllFavorites.result.map(item => item.url));
+            };
+
+            transaction.oncomplete = function() {
+                db.close();
+            };
+        };
+    }, []);
 
     const addToFavorites = (imageUrl) => {
-        alert("Сохранено")
-        setFavorites((prevFavorites) => [...prevFavorites, imageUrl]);
-        localStorage.setItem('favoriteImages', JSON.stringify([...favorites, imageUrl]));
+        alert("Сохранено");
+        const updatedFavorites = [...favorites, imageUrl];
+        setFavorites(updatedFavorites);
+        updateFavoritesIndexedDB(updatedFavorites);
     };
+    const updateFavoritesIndexedDB = (updatedFavorites) => {
+        const request = indexedDB.open('favoritesDB', 1);
+
+        request.onerror = function(event) {
+            console.error("IndexedDB error:", event.target.error);
+        };
+
+        request.onsuccess = function(event) {
+            const db = event.target.result;
+            const transaction = db.transaction(['favoritesStore'], 'readwrite');
+            const objectStore = transaction.objectStore('favoritesStore');
+
+            // Очистить хранилище
+            const clearRequest = objectStore.clear();
+
+            clearRequest.onsuccess = function() {
+                // Добавить обновленные избранные изображения в хранилище
+                updatedFavorites.forEach(url => {
+                    objectStore.add({ url });
+                });
+                console.log("Favorites IndexedDB has been updated.");
+            };
+
+            clearRequest.onerror = function() {
+                console.error("Error updating Favorites IndexedDB:", clearRequest.error);
+            };
+
+            transaction.oncomplete = function() {
+                db.close();
+            };
+        };
+    };
+
+
 
     const handleImageUpload = (event) => {
         const file = event.target.files[0];
