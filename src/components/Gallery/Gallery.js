@@ -365,10 +365,21 @@ const Gallery = ({imagesPerPage}) => {
                             </div>
                         </Link>
                         <div className="button-image">
-                            <button onClick={() => handleImageDelete(image)}><img src={"../Icons/icons8-удалить-32.png"}
-                                                                                  alt={'aaa'}></img></button>
-                            <button onClick={() => addToFavorites(image)}><img src={"../Icons/icons8-плюс-32.png"}
-                                                                               alt={'mage'}></img></button>
+                            <button onClick={() => handleImageDelete(image)}>
+                                <img
+                                    src={"../Icons/icons8-удалить-32.png"}
+                                    alt={'aaa'}
+                                    style={{width: "20px", height: "20px"}} // Новый размер 16x16
+                                />
+                            </button>
+                            <button onClick={() => addToFavorites(image)}>
+                                <img
+                                    src={"../Icons/icons8-плюс-32.png"}
+                                    alt={'mage'}
+                                    style={{width: "20px", height: "20px"}} // Новый размер 16x16
+                                />
+                            </button>
+
                         </div>
                     </div>
                 ))}
